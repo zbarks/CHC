@@ -1,0 +1,1154 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Caroline Horsford Communications</title>
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,600;0,700;1,400&family=Libre+Baskerville:ital@0;1&family=DM+Sans:wght@300;400;500&display=swap" rel="stylesheet">
+<style>
+  *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+  :root {
+    --black: #0a0a0a;
+    --white: #f8f6f3;
+    --red: #c8102e;
+    --mid: #5a5a5a;
+    --border: #d0ccc8;
+  }
+
+  html { scroll-behavior: smooth; }
+
+  body {
+    font-family: 'DM Sans', sans-serif;
+    background: var(--white);
+    color: var(--black);
+    overflow-x: hidden;
+  }
+
+  /* NAV */
+  nav {
+    position: fixed;
+    top: 0; left: 0; right: 0;
+    z-index: 100;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 1.4rem 4rem;
+    background: var(--white);
+    border-bottom: 1px solid var(--border);
+  }
+
+  .logo {
+    display: flex;
+    align-items: baseline;
+    gap: 0.5rem;
+    text-decoration: none;
+  }
+
+  .logo-chc {
+    font-family: 'Playfair Display', serif;
+    font-size: 1.5rem;
+    font-weight: 700;
+    color: var(--black);
+    letter-spacing: 0.12em;
+  }
+
+  .logo-chc span {
+    color: var(--red);
+  }
+
+  .logo-name {
+    font-family: 'DM Sans', sans-serif;
+    font-size: 0.7rem;
+    font-weight: 300;
+    letter-spacing: 0.25em;
+    text-transform: uppercase;
+    color: var(--mid);
+  }
+
+  .nav-links {
+    display: flex;
+    gap: 2.5rem;
+    list-style: none;
+    align-items: center;
+  }
+
+  .nav-links a {
+    font-size: 0.72rem;
+    font-weight: 400;
+    letter-spacing: 0.18em;
+    text-transform: uppercase;
+    text-decoration: none;
+    color: var(--black);
+    transition: color 0.2s;
+    position: relative;
+  }
+
+  .nav-links a::after {
+    content: '';
+    position: absolute;
+    bottom: -3px; left: 0;
+    width: 0; height: 1px;
+    background: var(--red);
+    transition: width 0.3s ease;
+  }
+
+  .nav-links a:hover { color: var(--red); }
+  .nav-links a:hover::after { width: 100%; }
+
+  .nav-cta {
+    background: var(--black) !important;
+    color: var(--white) !important;
+    padding: 0.6rem 1.4rem;
+    font-size: 0.72rem !important;
+    letter-spacing: 0.18em;
+    text-transform: uppercase;
+    text-decoration: none;
+    transition: background 0.2s !important;
+  }
+
+  .nav-cta:hover { background: var(--red) !important; }
+  .nav-cta::after { display: none !important; }
+
+  /* HERO */
+  #hero {
+    min-height: 100vh;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    padding-top: 80px;
+  }
+
+  .hero-left {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    padding: 6rem 4rem 6rem 4rem;
+    border-right: 1px solid var(--border);
+  }
+
+  .hero-eyebrow {
+    font-size: 0.68rem;
+    letter-spacing: 0.3em;
+    text-transform: uppercase;
+    color: var(--red);
+    font-weight: 500;
+    margin-bottom: 2rem;
+    display: flex;
+    align-items: center;
+    gap: 0.8rem;
+  }
+
+  .hero-eyebrow::before {
+    content: '';
+    display: block;
+    width: 2rem;
+    height: 1px;
+    background: var(--red);
+  }
+
+  h1 {
+    font-family: 'Playfair Display', serif;
+    font-size: clamp(2.8rem, 5vw, 4.2rem);
+    line-height: 1.1;
+    font-weight: 700;
+    margin-bottom: 1.8rem;
+    letter-spacing: -0.01em;
+  }
+
+  h1 em {
+    font-style: italic;
+    color: var(--red);
+  }
+
+  .hero-bio {
+    font-family: 'Libre Baskerville', serif;
+    font-size: 1rem;
+    line-height: 1.8;
+    color: var(--mid);
+    max-width: 480px;
+    margin-bottom: 3rem;
+  }
+
+  .hero-actions {
+    display: flex;
+    gap: 1rem;
+    flex-wrap: wrap;
+  }
+
+  .btn-primary {
+    display: inline-block;
+    background: var(--red);
+    color: var(--white);
+    padding: 0.85rem 2rem;
+    font-size: 0.75rem;
+    font-weight: 500;
+    letter-spacing: 0.15em;
+    text-transform: uppercase;
+    text-decoration: none;
+    transition: background 0.2s, transform 0.2s;
+  }
+
+  .btn-primary:hover {
+    background: var(--black);
+    transform: translateY(-1px);
+  }
+
+  .btn-secondary {
+    display: inline-block;
+    border: 1px solid var(--black);
+    color: var(--black);
+    padding: 0.85rem 2rem;
+    font-size: 0.75rem;
+    font-weight: 500;
+    letter-spacing: 0.15em;
+    text-transform: uppercase;
+    text-decoration: none;
+    transition: all 0.2s;
+  }
+
+  .btn-secondary:hover {
+    background: var(--black);
+    color: var(--white);
+    transform: translateY(-1px);
+  }
+
+  .hero-right {
+    position: relative;
+    background: var(--black);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    overflow: hidden;
+  }
+
+  .photo-placeholder {
+    width: 100%;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 1.2rem;
+    background: var(--black);
+  }
+
+  .photo-placeholder .photo-icon {
+    width: 80px;
+    height: 80px;
+    border: 1px solid rgba(255,255,255,0.15);
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+
+  .photo-placeholder .photo-icon svg {
+    opacity: 0.3;
+  }
+
+  .photo-placeholder p {
+    font-size: 0.68rem;
+    letter-spacing: 0.2em;
+    text-transform: uppercase;
+    color: rgba(255,255,255,0.2);
+    font-weight: 300;
+  }
+
+  .hero-credentials {
+    position: absolute;
+    bottom: 2.5rem;
+    left: 2.5rem;
+    right: 2.5rem;
+    display: flex;
+    gap: 2rem;
+    flex-wrap: wrap;
+  }
+
+  .credential {
+    display: flex;
+    flex-direction: column;
+    gap: 0.3rem;
+  }
+
+  .credential-num {
+    font-family: 'Playfair Display', serif;
+    font-size: 1.8rem;
+    color: var(--white);
+    font-weight: 700;
+    line-height: 1;
+  }
+
+  .credential-num span { color: var(--red); }
+
+  .credential-label {
+    font-size: 0.6rem;
+    letter-spacing: 0.18em;
+    text-transform: uppercase;
+    color: rgba(255,255,255,0.4);
+    font-weight: 300;
+  }
+
+  /* TICKER */
+  .ticker {
+    border-top: 1px solid var(--border);
+    border-bottom: 1px solid var(--border);
+    background: var(--black);
+    padding: 0.85rem 0;
+    overflow: hidden;
+    white-space: nowrap;
+  }
+
+  .ticker-inner {
+    display: inline-flex;
+    gap: 0;
+    animation: ticker 30s linear infinite;
+  }
+
+  .ticker-item {
+    font-size: 0.68rem;
+    letter-spacing: 0.2em;
+    text-transform: uppercase;
+    color: rgba(255,255,255,0.5);
+    padding: 0 3rem;
+  }
+
+  .ticker-item strong {
+    color: var(--red);
+    font-weight: 500;
+  }
+
+  @keyframes ticker {
+    from { transform: translateX(0); }
+    to { transform: translateX(-50%); }
+  }
+
+  /* SECTIONS */
+  section { padding: 7rem 4rem; }
+
+  .section-label {
+    font-size: 0.65rem;
+    letter-spacing: 0.3em;
+    text-transform: uppercase;
+    color: var(--red);
+    font-weight: 500;
+    margin-bottom: 1.2rem;
+    display: flex;
+    align-items: center;
+    gap: 0.8rem;
+  }
+
+  .section-label::before {
+    content: '';
+    display: block;
+    width: 1.5rem;
+    height: 1px;
+    background: var(--red);
+    flex-shrink: 0;
+  }
+
+  h2 {
+    font-family: 'Playfair Display', serif;
+    font-size: clamp(2rem, 3.5vw, 3rem);
+    line-height: 1.15;
+    font-weight: 700;
+    letter-spacing: -0.01em;
+  }
+
+  /* ABOUT */
+  #about {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 0;
+    padding: 0;
+  }
+
+  .about-left {
+    padding: 7rem 4rem;
+    border-right: 1px solid var(--border);
+  }
+
+  .about-right {
+    padding: 7rem 4rem;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+  }
+
+  .about-body {
+    font-family: 'Libre Baskerville', serif;
+    font-size: 1rem;
+    line-height: 1.9;
+    color: var(--mid);
+    margin-top: 2rem;
+  }
+
+  .about-body p + p { margin-top: 1.2rem; }
+
+  .location-tag {
+    margin-top: 2.5rem;
+    display: inline-flex;
+    align-items: center;
+    gap: 0.6rem;
+    font-size: 0.72rem;
+    letter-spacing: 0.15em;
+    text-transform: uppercase;
+    color: var(--mid);
+    font-weight: 400;
+    border-top: 1px solid var(--border);
+    padding-top: 1.5rem;
+    width: 100%;
+  }
+
+  .location-dot {
+    width: 6px;
+    height: 6px;
+    background: var(--red);
+    border-radius: 50%;
+    flex-shrink: 0;
+  }
+
+  .about-highlights {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 2px;
+    background: var(--border);
+    border: 1px solid var(--border);
+  }
+
+  .highlight-item {
+    background: var(--white);
+    padding: 2rem;
+  }
+
+  .highlight-item h3 {
+    font-family: 'Playfair Display', serif;
+    font-size: 1.1rem;
+    font-weight: 600;
+    margin-bottom: 0.5rem;
+  }
+
+  .highlight-item p {
+    font-size: 0.82rem;
+    line-height: 1.6;
+    color: var(--mid);
+  }
+
+  .highlight-item.red {
+    background: var(--red);
+  }
+
+  .highlight-item.red h3,
+  .highlight-item.red p {
+    color: var(--white);
+  }
+
+  .highlight-item.black {
+    background: var(--black);
+  }
+
+  .highlight-item.black h3,
+  .highlight-item.black p {
+    color: var(--white);
+  }
+
+  /* SERVICES */
+  #services {
+    background: var(--black);
+    color: var(--white);
+    border-top: 1px solid #1a1a1a;
+  }
+
+  #services .section-label { color: var(--red); }
+  #services .section-label::before { background: var(--red); }
+  #services h2 { color: var(--white); }
+
+  .services-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-end;
+    margin-bottom: 4rem;
+    flex-wrap: wrap;
+    gap: 2rem;
+  }
+
+  .services-intro {
+    font-size: 0.9rem;
+    color: rgba(255,255,255,0.45);
+    max-width: 360px;
+    line-height: 1.7;
+    letter-spacing: 0.02em;
+  }
+
+  .services-grid {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 1px;
+    background: rgba(255,255,255,0.08);
+  }
+
+  .service-card {
+    background: var(--black);
+    padding: 2.5rem 2rem;
+    border-top: 2px solid transparent;
+    transition: border-color 0.2s, background 0.2s;
+    cursor: default;
+  }
+
+  .service-card:hover {
+    border-color: var(--red);
+    background: #111;
+  }
+
+  .service-num {
+    font-family: 'Playfair Display', serif;
+    font-size: 2.5rem;
+    color: rgba(255,255,255,0.07);
+    font-weight: 700;
+    margin-bottom: 1.5rem;
+    line-height: 1;
+  }
+
+  .service-card h3 {
+    font-family: 'Playfair Display', serif;
+    font-size: 1rem;
+    font-weight: 600;
+    color: var(--white);
+    margin-bottom: 0.8rem;
+    line-height: 1.3;
+  }
+
+  .service-card p {
+    font-size: 0.8rem;
+    line-height: 1.7;
+    color: rgba(255,255,255,0.4);
+  }
+
+  /* TESTIMONIALS */
+  #testimonials {
+    padding: 0;
+  }
+
+  .testimonials-inner {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 0;
+    border-top: 1px solid var(--border);
+  }
+
+  .testimonial-card {
+    padding: 4rem 3rem;
+    border-right: 1px solid var(--border);
+    position: relative;
+  }
+
+  .testimonial-card:last-child { border-right: none; }
+
+  .quote-mark {
+    font-family: 'Playfair Display', serif;
+    font-size: 6rem;
+    color: var(--red);
+    line-height: 0.7;
+    margin-bottom: 1.5rem;
+    display: block;
+    opacity: 0.25;
+  }
+
+  .testimonial-text {
+    font-family: 'Libre Baskerville', serif;
+    font-size: 0.92rem;
+    line-height: 1.85;
+    color: var(--black);
+    margin-bottom: 2rem;
+    font-style: italic;
+  }
+
+  .testimonial-project {
+    font-size: 0.65rem;
+    letter-spacing: 0.2em;
+    text-transform: uppercase;
+    color: var(--red);
+    font-weight: 500;
+    margin-bottom: 1rem;
+    display: block;
+  }
+
+  .testimonial-author {
+    font-weight: 500;
+    font-size: 0.85rem;
+    color: var(--black);
+    letter-spacing: 0.02em;
+  }
+
+  .testimonial-role {
+    font-size: 0.75rem;
+    color: var(--mid);
+    margin-top: 0.2rem;
+    line-height: 1.4;
+  }
+
+  /* CONTACT */
+  #contact {
+    background: var(--black);
+    color: var(--white);
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    padding: 0;
+  }
+
+  .contact-left {
+    padding: 7rem 4rem;
+    border-right: 1px solid rgba(255,255,255,0.08);
+  }
+
+  .contact-left .section-label { color: var(--red); }
+  .contact-left .section-label::before { background: var(--red); }
+  .contact-left h2 { color: var(--white); }
+
+  .contact-tagline {
+    font-family: 'Libre Baskerville', serif;
+    font-size: 1rem;
+    line-height: 1.8;
+    color: rgba(255,255,255,0.5);
+    margin-top: 1.5rem;
+    margin-bottom: 3rem;
+  }
+
+  .contact-details {
+    display: flex;
+    flex-direction: column;
+    gap: 1.2rem;
+  }
+
+  .contact-item {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+    text-decoration: none;
+    color: var(--white);
+    padding: 1rem 1.2rem;
+    border: 1px solid rgba(255,255,255,0.08);
+    transition: border-color 0.2s, background 0.2s;
+  }
+
+  .contact-item:hover {
+    border-color: var(--red);
+    background: rgba(200,16,46,0.06);
+  }
+
+  .contact-item-icon {
+    width: 36px;
+    height: 36px;
+    background: rgba(200,16,46,0.15);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-shrink: 0;
+  }
+
+  .contact-item-icon svg { color: var(--red); }
+
+  .contact-item-label {
+    font-size: 0.6rem;
+    letter-spacing: 0.2em;
+    text-transform: uppercase;
+    color: rgba(255,255,255,0.3);
+    display: block;
+    margin-bottom: 0.2rem;
+  }
+
+  .contact-item-value {
+    font-size: 0.88rem;
+    font-weight: 400;
+    color: var(--white);
+  }
+
+  .contact-right {
+    padding: 7rem 4rem;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+  }
+
+  .contact-right h3 {
+    font-family: 'Playfair Display', serif;
+    font-size: 1.4rem;
+    color: var(--white);
+    margin-bottom: 2rem;
+    font-weight: 600;
+  }
+
+  .form-field {
+    margin-bottom: 1.2rem;
+  }
+
+  .form-field label {
+    display: block;
+    font-size: 0.62rem;
+    letter-spacing: 0.2em;
+    text-transform: uppercase;
+    color: rgba(255,255,255,0.35);
+    margin-bottom: 0.5rem;
+    font-weight: 400;
+  }
+
+  .form-field input,
+  .form-field textarea,
+  .form-field select {
+    width: 100%;
+    background: rgba(255,255,255,0.04);
+    border: 1px solid rgba(255,255,255,0.1);
+    color: var(--white);
+    padding: 0.85rem 1rem;
+    font-size: 0.88rem;
+    font-family: 'DM Sans', sans-serif;
+    outline: none;
+    transition: border-color 0.2s;
+    -webkit-appearance: none;
+    border-radius: 0;
+  }
+
+  .form-field input:focus,
+  .form-field textarea:focus,
+  .form-field select:focus {
+    border-color: var(--red);
+  }
+
+  .form-field textarea {
+    resize: vertical;
+    min-height: 100px;
+  }
+
+  .form-field select option {
+    background: #111;
+    color: var(--white);
+  }
+
+  .form-submit {
+    margin-top: 0.5rem;
+    width: 100%;
+    background: var(--red);
+    color: var(--white);
+    border: none;
+    padding: 1rem;
+    font-size: 0.75rem;
+    font-weight: 500;
+    letter-spacing: 0.18em;
+    text-transform: uppercase;
+    cursor: pointer;
+    font-family: 'DM Sans', sans-serif;
+    transition: background 0.2s;
+  }
+
+  .form-submit:hover { background: #e0122f; }
+
+  /* FOOTER */
+  footer {
+    border-top: 1px solid rgba(255,255,255,0.07);
+    background: #050505;
+    padding: 2rem 4rem;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    gap: 1rem;
+  }
+
+  .footer-logo {
+    font-family: 'Playfair Display', serif;
+    font-size: 1.1rem;
+    font-weight: 700;
+    color: var(--white);
+    letter-spacing: 0.1em;
+    text-decoration: none;
+  }
+
+  .footer-logo span { color: var(--red); }
+
+  .footer-copy {
+    font-size: 0.68rem;
+    color: rgba(255,255,255,0.2);
+    letter-spacing: 0.08em;
+  }
+
+  .footer-links {
+    display: flex;
+    gap: 1.5rem;
+    list-style: none;
+  }
+
+  .footer-links a {
+    font-size: 0.68rem;
+    letter-spacing: 0.15em;
+    text-transform: uppercase;
+    color: rgba(255,255,255,0.25);
+    text-decoration: none;
+    transition: color 0.2s;
+  }
+
+  .footer-links a:hover { color: var(--red); }
+
+  /* ANIMATIONS */
+  .fade-up {
+    opacity: 0;
+    transform: translateY(24px);
+    transition: opacity 0.7s ease, transform 0.7s ease;
+  }
+
+  .fade-up.visible {
+    opacity: 1;
+    transform: translateY(0);
+  }
+
+  /* RESPONSIVE */
+  @media (max-width: 900px) {
+    nav { padding: 1.2rem 2rem; }
+    .nav-links { display: none; }
+
+    #hero { grid-template-columns: 1fr; }
+    .hero-left { padding: 5rem 2rem 3rem; border-right: none; border-bottom: 1px solid var(--border); }
+    .hero-right { min-height: 55vw; }
+
+    #about { grid-template-columns: 1fr; }
+    .about-left { padding: 4rem 2rem; border-right: none; border-bottom: 1px solid var(--border); }
+    .about-right { padding: 4rem 2rem; }
+
+    .services-grid { grid-template-columns: 1fr 1fr; }
+
+    .testimonials-inner { grid-template-columns: 1fr; }
+    .testimonial-card { border-right: none; border-bottom: 1px solid var(--border); }
+
+    #contact { grid-template-columns: 1fr; }
+    .contact-left { padding: 4rem 2rem; border-right: none; border-bottom: 1px solid rgba(255,255,255,0.08); }
+    .contact-right { padding: 4rem 2rem; }
+
+    section { padding: 5rem 2rem; }
+    footer { padding: 2rem; }
+  }
+
+  @media (max-width: 560px) {
+    .services-grid { grid-template-columns: 1fr; }
+    .about-highlights { grid-template-columns: 1fr; }
+    .hero-credentials { flex-direction: row; }
+  }
+</style>
+</head>
+<body>
+
+<!-- NAV -->
+<nav>
+  <a href="#hero" class="logo">
+    <span class="logo-chc">C<span>H</span>C</span>
+    <span class="logo-name">Caroline Horsford Communications</span>
+  </a>
+  <ul class="nav-links">
+    <li><a href="#about">About</a></li>
+    <li><a href="#services">Services</a></li>
+    <li><a href="#testimonials">Work</a></li>
+    <li><a href="#contact" class="nav-cta">Get in Touch</a></li>
+  </ul>
+</nav>
+
+<!-- HERO -->
+<section id="hero">
+  <div class="hero-left">
+    <div class="hero-eyebrow">Communications Specialist</div>
+    <h1>Strategic comms<br>for <em>fascinating</em><br>projects.</h1>
+    <p class="hero-bio">
+      From BBC iPlayer to government security-cleared communications, 
+      Caroline Horsford brings two decades of cross-sector expertise — copywriting, 
+      digital strategy, internal comms, and events — to clients who want it done properly.
+    </p>
+    <div class="hero-actions">
+      <a href="#services" class="btn-primary">Explore Services</a>
+      <a href="#contact" class="btn-secondary">Start a Conversation</a>
+    </div>
+  </div>
+  <div class="hero-right">
+    <div class="photo-placeholder">
+      <div class="photo-icon">
+        <svg width="32" height="32" fill="none" viewBox="0 0 24 24" stroke="white" stroke-width="1">
+          <path stroke-linecap="round" stroke-linejoin="round" d="M16 7a4 4 0 11-8 0 4 4 0 018 0zM12 14a7 7 0 00-7 7h14a7 7 0 00-7-7z" />
+        </svg>
+      </div>
+      <p>Photo coming soon</p>
+    </div>
+    <div class="hero-credentials">
+      <div class="credential">
+        <div class="credential-num">20<span>+</span></div>
+        <div class="credential-label">Years Experience</div>
+      </div>
+      <div class="credential">
+        <div class="credential-num">5<span>+</span></div>
+        <div class="credential-label">Countries</div>
+      </div>
+      <div class="credential">
+        <div class="credential-num">SC</div>
+        <div class="credential-label">Security Cleared</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- TICKER -->
+<div class="ticker">
+  <div class="ticker-inner">
+    <span class="ticker-item">Content Creation</span>
+    <span class="ticker-item"><strong>·</strong></span>
+    <span class="ticker-item">Digital Communications</span>
+    <span class="ticker-item"><strong>·</strong></span>
+    <span class="ticker-item">Internal Comms</span>
+    <span class="ticker-item"><strong>·</strong></span>
+    <span class="ticker-item">Change Management</span>
+    <span class="ticker-item"><strong>·</strong></span>
+    <span class="ticker-item">Events Strategy</span>
+    <span class="ticker-item"><strong>·</strong></span>
+    <span class="ticker-item">Copywriting</span>
+    <span class="ticker-item"><strong>·</strong></span>
+    <span class="ticker-item">Employee Engagement</span>
+    <span class="ticker-item"><strong>·</strong></span>
+    <span class="ticker-item">Social Media</span>
+    <span class="ticker-item"><strong>·</strong></span>
+    <!-- duplicate for seamless loop -->
+    <span class="ticker-item">Content Creation</span>
+    <span class="ticker-item"><strong>·</strong></span>
+    <span class="ticker-item">Digital Communications</span>
+    <span class="ticker-item"><strong>·</strong></span>
+    <span class="ticker-item">Internal Comms</span>
+    <span class="ticker-item"><strong>·</strong></span>
+    <span class="ticker-item">Change Management</span>
+    <span class="ticker-item"><strong>·</strong></span>
+    <span class="ticker-item">Events Strategy</span>
+    <span class="ticker-item"><strong>·</strong></span>
+    <span class="ticker-item">Copywriting</span>
+    <span class="ticker-item"><strong>·</strong></span>
+    <span class="ticker-item">Employee Engagement</span>
+    <span class="ticker-item"><strong>·</strong></span>
+    <span class="ticker-item">Social Media</span>
+    <span class="ticker-item"><strong>·</strong></span>
+  </div>
+</div>
+
+<!-- ABOUT -->
+<div id="about">
+  <div class="about-left fade-up">
+    <div class="section-label">About Caroline</div>
+    <h2>A career built across<br>countries & industries.</h2>
+    <div class="about-body">
+      <p>
+        Caroline studied Communications — which everyone thought was unconventional for someone from a geography background, but it launched an extraordinary career. She was raised in Scotland, Holland and Oman, and has worked across Spain and Kenya.
+      </p>
+      <p>
+        She trained as a copywriter at JWT advertising in Nairobi, learning to write for the full breadth of audiences. She went on to be part of the communications team behind the groundbreaking launch of BBC iPlayer, before working across multiple government departments as a security-cleared communications specialist.
+      </p>
+      <p>
+        Today she continues to be drawn to fascinating projects — bringing senior-level thinking with a freelancer's flexibility.
+      </p>
+    </div>
+    <div class="location-tag">
+      <span class="location-dot"></span>
+      Based in Bath &nbsp;·&nbsp; Available to travel
+    </div>
+  </div>
+  <div class="about-right fade-up">
+    <div class="about-highlights">
+      <div class="highlight-item black">
+        <h3>JWT Advertising<br>Nairobi, Kenya</h3>
+        <p>Where it all began — copywriting for diverse audiences.</p>
+      </div>
+      <div class="highlight-item">
+        <h3>BBC iPlayer<br>Launch Team</h3>
+        <p>Part of the comms team on a groundbreaking UK media project.</p>
+      </div>
+      <div class="highlight-item red">
+        <h3>Government<br>Communications</h3>
+        <p>SC-cleared specialist across multiple departments.</p>
+      </div>
+      <div class="highlight-item">
+        <h3>Degree in<br>Communications Studies</h3>
+        <p>A bold academic choice that defined a career.</p>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- SERVICES -->
+<section id="services">
+  <div class="services-header fade-up">
+    <div>
+      <div class="section-label">What I Offer</div>
+      <h2>Services</h2>
+    </div>
+    <p class="services-intro">Flexible, senior-level communications support across disciplines — tailored to your project's needs.</p>
+  </div>
+  <div class="services-grid">
+    <div class="service-card fade-up">
+      <div class="service-num">01</div>
+      <h3>Content Creation</h3>
+      <p>Copywriting, newsletter creation and editing. Words that work hard for your brand or organisation.</p>
+    </div>
+    <div class="service-card fade-up">
+      <div class="service-num">02</div>
+      <h3>Digital Communications</h3>
+      <p>Social media management and digital strategy. Building and maintaining your presence where it matters.</p>
+    </div>
+    <div class="service-card fade-up">
+      <div class="service-num">03</div>
+      <h3>Internal Communications</h3>
+      <p>Change management, communications planning and employee engagement. Getting your people on board.</p>
+    </div>
+    <div class="service-card fade-up">
+      <div class="service-num">04</div>
+      <h3>Events Support</h3>
+      <p>Strategic communications support for online and offline events — from planning to post-event comms.</p>
+    </div>
+  </div>
+</section>
+
+<!-- TESTIMONIALS -->
+<section id="testimonials" style="padding: 0;">
+  <div style="padding: 5rem 4rem 2rem; border-top: 1px solid var(--border);">
+    <div class="section-label fade-up">Kind Words</div>
+    <h2 class="fade-up">What clients say.</h2>
+  </div>
+  <div class="testimonials-inner">
+    <div class="testimonial-card fade-up">
+      <span class="quote-mark">"</span>
+      <p class="testimonial-text">I have known Caroline for nearly twenty years and can recommend her as someone with experience across the board in all things communications. She brings fresh ideas, an interesting perspective and works hard to make every project a success.</p>
+      <span class="testimonial-project">Book Launch · Toppings</span>
+      <div class="testimonial-author">Liz Earle MBE</div>
+      <div class="testimonial-role">Author, <em>How to Age Well</em></div>
+    </div>
+    <div class="testimonial-card fade-up">
+      <span class="quote-mark">"</span>
+      <p class="testimonial-text">Caroline has that rare quality of being unable to fully see her own talent whilst having an amazing gift of promoting other people.</p>
+      <span class="testimonial-project">Chagos Islands Resettlement Project</span>
+      <div class="testimonial-author">Adam Holloway</div>
+      <div class="testimonial-role">Former Member of Parliament,<br>veteran &amp; broadcaster</div>
+    </div>
+    <div class="testimonial-card fade-up">
+      <span class="quote-mark">"</span>
+      <p class="testimonial-text">A communications professional with an exceptional eye for storytelling, strategic thinking, and the ability to connect with any audience.</p>
+      <span class="testimonial-project">Documentary Series · Pitch Development</span>
+      <div class="testimonial-author">Alan Miller</div>
+      <div class="testimonial-role">Founder, #Together —<br>campaigner &amp; broadcaster</div>
+    </div>
+  </div>
+</section>
+
+<!-- CONTACT -->
+<div id="contact">
+  <div class="contact-left fade-up">
+    <div class="section-label">Get in Touch</div>
+    <h2>Let's talk<br>about your<br>project.</h2>
+    <p class="contact-tagline">
+      Available for freelance engagements. Based in Bath — happy to travel.
+    </p>
+    <div class="contact-details">
+      <a href="tel:07899756527" class="contact-item">
+        <div class="contact-item-icon">
+          <svg width="16" height="16" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="1.5">
+            <path stroke-linecap="round" stroke-linejoin="round" d="M2.25 6.75c0 8.284 6.716 15 15 15h2.25a2.25 2.25 0 002.25-2.25v-1.372c0-.516-.351-.966-.852-1.091l-4.423-1.106c-.44-.11-.902.055-1.173.417l-.97 1.293c-.282.376-.769.542-1.21.38a12.035 12.035 0 01-7.143-7.143c-.162-.441.004-.928.38-1.21l1.293-.97c.363-.271.527-.734.417-1.173L6.963 3.102a1.125 1.125 0 00-1.091-.852H4.5A2.25 2.25 0 002.25 4.5v2.25z" />
+          </svg>
+        </div>
+        <div>
+          <span class="contact-item-label">Phone</span>
+          <span class="contact-item-value">07899 756527</span>
+        </div>
+      </a>
+      <a href="mailto:CarolineCommsUK@protonmail.com" class="contact-item">
+        <div class="contact-item-icon">
+          <svg width="16" height="16" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="1.5">
+            <path stroke-linecap="round" stroke-linejoin="round" d="M21.75 6.75v10.5a2.25 2.25 0 01-2.25 2.25h-15a2.25 2.25 0 01-2.25-2.25V6.75m19.5 0A2.25 2.25 0 0019.5 4.5h-15a2.25 2.25 0 00-2.25 2.25m19.5 0v.243a2.25 2.25 0 01-1.07 1.916l-7.5 4.615a2.25 2.25 0 01-2.36 0L3.32 8.91a2.25 2.25 0 01-1.07-1.916V6.75" />
+          </svg>
+        </div>
+        <div>
+          <span class="contact-item-label">Email</span>
+          <span class="contact-item-value">CarolineCommsUK@protonmail.com</span>
+        </div>
+      </a>
+      <a href="https://www.linkedin.com/in/caroline-horsford-b7670918/" target="_blank" rel="noopener" class="contact-item">
+        <div class="contact-item-icon">
+          <svg width="16" height="16" fill="currentColor" viewBox="0 0 24 24">
+            <path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433c-1.144 0-2.063-.926-2.063-2.065 0-1.138.92-2.063 2.063-2.063 1.14 0 2.064.925 2.064 2.063 0 1.139-.925 2.065-2.064 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z"/>
+          </svg>
+        </div>
+        <div>
+          <span class="contact-item-label">LinkedIn</span>
+          <span class="contact-item-value">caroline-horsford</span>
+        </div>
+      </a>
+    </div>
+  </div>
+  <div class="contact-right fade-up">
+    <h3>Send a message</h3>
+    <div class="form-field">
+      <label>Your Name</label>
+      <input type="text" placeholder="Full name">
+    </div>
+    <div class="form-field">
+      <label>Email Address</label>
+      <input type="email" placeholder="your@email.com">
+    </div>
+    <div class="form-field">
+      <label>Service of Interest</label>
+      <select>
+        <option value="" disabled selected>Select a service…</option>
+        <option>Content Creation</option>
+        <option>Digital Communications</option>
+        <option>Internal Communications</option>
+        <option>Events Support</option>
+        <option>Not sure yet</option>
+      </select>
+    </div>
+    <div class="form-field">
+      <label>Message</label>
+      <textarea placeholder="Tell me about your project…"></textarea>
+    </div>
+    <button class="form-submit" onclick="this.textContent='Message Sent ✓'; this.style.background='#1a7a4a'; setTimeout(()=>{this.textContent='Send Message'; this.style.background='';}, 3000)">Send Message</button>
+  </div>
+</div>
+
+<!-- FOOTER -->
+<footer>
+  <a href="#hero" class="footer-logo">C<span>H</span>C</a>
+  <p class="footer-copy">© 2025 Caroline Horsford Communications. Based in Bath.</p>
+  <ul class="footer-links">
+    <li><a href="#about">About</a></li>
+    <li><a href="#services">Services</a></li>
+    <li><a href="#contact">Contact</a></li>
+  </ul>
+</footer>
+
+<script>
+  // Scroll animations
+  const observer = new IntersectionObserver((entries) => {
+    entries.forEach(el => {
+      if (el.isIntersecting) {
+        el.target.classList.add('visible');
+        observer.unobserve(el.target);
+      }
+    });
+  }, { threshold: 0.12 });
+
+  document.querySelectorAll('.fade-up').forEach((el, i) => {
+    el.style.transitionDelay = `${(i % 4) * 80}ms`;
+    observer.observe(el);
+  });
+
+  // Active nav link on scroll
+  const sections = document.querySelectorAll('section[id], div[id]');
+  const navLinks = document.querySelectorAll('.nav-links a');
+
+  window.addEventListener('scroll', () => {
+    let current = '';
+    sections.forEach(s => {
+      if (window.scrollY >= s.offsetTop - 120) current = s.id;
+    });
+    navLinks.forEach(a => {
+      a.style.color = a.getAttribute('href') === `#${current}` ? 'var(--red)' : '';
+    });
+  });
+</script>
+
+</body>
+</html>
